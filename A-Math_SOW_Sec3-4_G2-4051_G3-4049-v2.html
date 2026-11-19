@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOW: Secondary 3 &amp; 4 Additional Mathematics (G2 4051 &amp; G3 4049) — Multi-Publisher Aligned</title>
+
+  <!-- MathJax 3 Engine Configuration -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #eff6ff;
+      --border: #bfdbfe;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --g2-accent: #0f766e;
+      --g3-accent: #6b21a8;
+    }
+
+    body.theme-sl {
+      --primary: #1e3a8a;
+      --primary-light: #eff6ff;
+      --border: #bfdbfe;
+      --bg: #f8fafc;
+    }
+    body.theme-sp {
+      --primary: #991b1b;
+      --primary-light: #fef2f2;
+      --border: #fecaca;
+      --bg: #fdf2f2;
+    }
+    body.theme-mc {
+      --primary: #065f46;
+      --primary-light: #ecfdf5;
+      --border: #bbf7d0;
+      --bg: #f0fdf4;
+    }
+    body.theme-cmp {
+      --primary: #3730a3;
+      --primary-light: #eef2ff;
+      --border: #c7d2fe;
+      --bg: #f5f3ff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 20px;
+      line-height: 1.48;
+      transition: background 0.2s ease;
+    }
+    .container { max-width: 1320px; margin: 0 auto; }
+
+    header {
+      background: var(--surface);
+      padding: 20px 24px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    h1 { font-size: 1.32rem; color: var(--primary); transition: color 0.2s; }
+    .subtitle { font-size: 0.84rem; color: var(--muted); margin-top: 3px; }
+    .badge-group { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .badge {
+      font-size: 0.74rem;
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .nav-bar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .selector-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .selector-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      width: 92px;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .btn {
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #475569;
+      padding: 6px 13px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn:hover { border-color: var(--primary); color: var(--primary); }
+    .btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .btn.btn-g2.active { background: var(--g2-accent); border-color: var(--g2-accent); color: #fff; }
+    .btn.btn-g3.active { background: var(--g3-accent); border-color: var(--g3-accent); color: #fff; }
+
+    .pedagogy-banner {
+      background: var(--surface);
+      border-left: 4px solid var(--primary);
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 0.84rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pedagogy-banner strong { color: var(--primary); }
+
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    .card {
+      background: var(--surface);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    .term-title {
+      background: var(--primary-light);
+      padding: 10px 16px;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.88rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #f1f5f9;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f8fafc;
+      color: var(--muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #fafafa; }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .tag-alg { background: #ecfdf5; color: #065f46; }
+    .tag-geo { background: #eff6ff; color: #1e40af; }
+    .tag-trig { background: #fefce8; color: #854d0e; }
+    .tag-calc { background: #faf5ff; color: #6b21a8; }
+    .tag-rev { background: #f1f5f9; color: #334155; }
+    .tag-g3only {
+      background: #fae8ff;
+      color: #86198f;
+      border: 1px solid #f0abfc;
+      margin-left: 4px;
+    }
+    .tag-excl {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .tag-incl {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .ch-ref {
+      display: block;
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .nav-bar { display: none; }
+      .panel { display: block !important; page-break-after: always; }
+      .card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body class="theme-sl">
+<div class="container">
+  <header>
+    <div>
+      <h1 id="main-title">Scheme of Work: Additional Mathematics (Sec 3 &amp; 4)</h1>
+      <div class="subtitle" id="main-subtitle">Singapore MOE Full SBB Syllabi: G2 (4051) &amp; G3 (4049) | Shing Lee, Star Publishing &amp; Marshall Cavendish</div>
+    </div>
+    <div class="badge-group">
+      <span class="badge" id="syllabus-badge">Syllabus G3 (4049)</span>
+      <span class="badge">40-Week Academic Year</span>
+      <span class="badge">MathJax 3 Enabled</span>
+    </div>
+  </header>
+
+  <div class="nav-bar">
+    <div class="selector-row">
+      <span class="selector-label">Publisher:</span>
+      <button class="btn active" data-pub="sl" onclick="pickPub('sl')">Shing Lee (Think! A-Math)</button>
+      <button class="btn" data-pub="sp" onclick="pickPub('sp')">Star Publishing (A-Math Insights)</button>
+      <button class="btn" data-pub="mc" onclick="pickPub('mc')">Marshall Cavendish (A-Math 360)</button>
+      <button class="btn" data-pub="cmp" onclick="pickPub('cmp')">4051 vs 4049 Matrix</button>
+    </div>
+    <div class="selector-row" id="row-level">
+      <span class="selector-label">Level:</span>
+      <button class="btn active" data-lvl="s3" onclick="pickLevel('s3')">Secondary 3</button>
+      <button class="btn" data-lvl="s4" onclick="pickLevel('s4')">Secondary 4</button>
+    </div>
+    <div class="selector-row" id="row-grade">
+      <span class="selector-label">Syllabus:</span>
+      <button class="btn btn-g3 active" data-grd="g3" onclick="pickGrade('g3')">G3 A-Math (4049)</button>
+      <button class="btn btn-g2" data-grd="g2" onclick="pickGrade('g2')">G2 A-Math (4051)</button>
+    </div>
+  </div>
+
+  <div class="pedagogy-banner" id="pedagogy-banner">
+    <div><strong>Shing Lee Publishers (Think! Additional Mathematics / NSAM):</strong> Investigative inquiry, spiral progression, structured anchor tasks, and rigorous procedural drill sets.</div>
+    <div style="color:var(--muted); font-size:0.78rem;">Print / Save PDF: <code>Ctrl+P</code> / <code>Cmd+P</code></div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- SHING LEE — SEC 3 G3 (4049)                                           -->
+  <!-- ===================================================================== -->
+  <div id="p-sl-s3-g3" class="panel active">
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G3 (4049) — Term 1: Algebra Foundations</span><span>Weeks 1–10</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Learning Scope &amp; Mathematical Objectives</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-alg">Algebra</span></td><td>Quadratic Functions &amp; Inequalities<span class="ch-ref">Think! A-Math Ch 1–2</span></td><td>Completing the square $y = a(x-h)^2 + k$; discriminant $b^2 - 4ac$ conditions for nature of roots and line-curve intersections; solving quadratic inequalities; definite quadratics ($a > 0, D < 0$ or $a < 0, D < 0$).</td><td>Diagnostic Quiz &amp; WA 1</td></tr>
+          <tr><td>W4–6</td><td><span class="tag tag-alg">Algebra</span></td><td>Polynomials &amp; Partial Fractions<span class="ch-ref">Think! A-Math Ch 3</span></td><td>Polynomial division, Remainder and Factor Theorems, solving cubic equations $ax^3 + bx^2 + cx + d = 0$; algebraic identities $a^3 \pm b^3$; decomposing proper rational expressions into partial fractions (including repeated linear and irreducible quadratic factors).</td><td>Topical Mastery Check</td></tr>
+          <tr><td>W7–8</td><td><span class="tag tag-alg">Algebra</span></td><td>Surds &amp; Radical Equations<span class="ch-ref">Think! A-Math Ch 4</span></td><td>Laws of surds $\sqrt{ab} = \sqrt{a}\sqrt{b}$; rationalising denominators using conjugate surds $\frac{c}{a \pm \sqrt{b}}$; solving equations involving surds and rejecting extraneous roots.</td><td>Surd Manipulation Drill</td></tr>
+          <tr><td>W9–10</td><td><span class="tag tag-alg">Algebra</span></td><td>Binomial Theorem<span class="ch-ref">Think! A-Math Ch 5</span></td><td>Binomial expansion of $(1+b)^n$ and $(a+b)^n$ for positive integer $n$; combinatorial notation $\binom{n}{r} = \frac{n!}{r!(n-r)!}$; general term $T_{r+1} = \binom{n}{r} a^{n-r} b^r$ and finding specific coefficients.</td><td>Binomial Quiz</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G3 (4049) — Term 2: Transcendental Functions &amp; Coordinate Geometry</span><span>Weeks 11–20</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Learning Scope &amp; Mathematical Objectives</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-alg">Algebra</span></td><td>Exponential &amp; Logarithmic Functions<span class="ch-ref">Think! A-Math Ch 6</span></td><td>Laws of indices and logarithms ($\log_a xy$, $\log_a \frac{x}{y}$, $\log_a x^r$); change-of-base formula $\log_a b = \frac{\log_c b}{\log_c a}$; natural exponential $e^x$ and logarithm $\ln x$; graphs and real-world growth/decay models.</td><td>WA 2</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-geo">Geometry</span></td><td>Coordinate Geometry &amp; Linear Law<span class="ch-ref">Think! A-Math Ch 7</span></td><td>Midpoint, distance, parallel and perpendicular lines ($m_1 m_2 = -1$), area of rectilinear figures (shoelace method); transforming non-linear relations ($y = ax^n$, $y = kb^x$) into linear form $Y = mX + c$.</td><td>Linear Law Lab</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-geo">Geometry</span></td><td>Equations of Circles<span class="ch-ref">Think! A-Math Ch 8</span></td><td>Standard form $(x-a)^2 + (y-b)^2 = r^2$ and general form $x^2 + y^2 + 2gx + 2fy + c = 0$; finding centre $(-g, -f)$ and radius $\sqrt{g^2 + f^2 - c}$; equations of tangents and normals to circles.</td><td>Coordinate Circle Test</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G3 (4049) — Term 3: Trigonometry &amp; Plane Geometry Proofs</span><span>Weeks 21–30</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Learning Scope &amp; Mathematical Objectives</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-trig">Trigonometry</span></td><td>Trig Functions, Graphs &amp; Equations<span class="ch-ref">Think! A-Math Ch 9</span></td><td>Trigonometric ratios of acute and general angles in all four quadrants (ASTC); exact values for $30^\circ, 45^\circ, 60^\circ$ ($\frac{\pi}{6}, \frac{\pi}{4}, \frac{\pi}{3}$); sketching $y = a\sin(bx) + c$, $y = a\cos(bx) + c$, $y = a\tan(bx)$; principal values.</td><td>WA 3</td></tr>
+          <tr><td>W4–7</td><td><span class="tag tag-trig">Trigonometry</span></td><td>Trig Identities, Formulae &amp; R-Form<span class="ch-ref">Think! A-Math Ch 10</span></td><td>Reciprocal functions ($\sec\theta, \csc\theta, \cot\theta$); Pythagorean identities ($\sin^2\theta + \cos^2\theta = 1$, $1 + \tan^2\theta = \sec^2\theta$, $1 + \cot^2\theta = \csc^2\theta$); addition and double-angle formulae; $a\cos\theta \pm b\sin\theta = R\cos(\theta \mp \alpha)$.</td><td>Identities Proof Drill</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-geo">Geometry</span></td><td>Proofs in Plane Geometry<span class="ch-ref">Think! A-Math Ch 11</span></td><td>Deductive geometric proofs applying congruent/similar triangles, Midpoint Theorem, Tangent-Chord (Alternate Segment) Theorem, and intersecting chords/secants.</td><td>Deductive Proof Task</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G3 (4049) — Term 4: Introduction to Calculus &amp; EOY Consolidation</span><span>Weeks 31–40</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Learning Scope &amp; Mathematical Objectives</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-calc">Calculus</span></td><td>Differentiation &amp; Differentiation Rules<span class="ch-ref">Think! A-Math Ch 12</span></td><td>Derivative $\frac{dy}{dx}$ and $f'(x)$ as gradient function; power rule $\frac{d}{dx}(x^n) = nx^{n-1}$; chain rule, product rule, and quotient rule; increasing and decreasing functions.</td><td>Calculus Foundation Quiz</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-rev">Revision</span></td><td>Sec 3 Topical Synthesis<span class="ch-ref">All Sec 3 Chapters</span></td><td>Cross-topical problem sets bridging quadratics, logarithms, trigonometric equations, and algebraic differentiation.</td><td>Mock Examination</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Examination</span></td><td>End-of-Year Examinations<span class="ch-ref">Paper 1 &amp; Paper 2 Format</span></td><td>Summative Sec 3 A-Math examination mirroring O-Level 4049 rubrics and post-exam error clinic.</td><td>EOY Papers 1 &amp; 2</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- SHING LEE — SEC 4 G3 (4049)                                           -->
+  <!-- ===================================================================== -->
+  <div id="p-sl-s4-g3" class="panel">
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G3 (4049) — Term 1: Advanced Differentiation &amp; Applications</span><span>Weeks 1–10</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Learning Scope &amp; Mathematical Objectives</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-calc">Calculus</span></td><td>Derivatives of Trig, Exp &amp; Log Functions<span class="ch-ref">Think! A-Math Ch 13</span></td><td>Differentiating $\sin(ax+b)$, $\cos(ax+b)$, $\tan(ax+b)$, $e^{ax+b}$, and $\ln(ax+b)$ combined with product, quotient, and chain rules.</td><td>Transcendental Quiz</td></tr>
+          <tr><td>W4–7</td><td><span class="tag tag-calc">Calculus</span></td><td>Tangents, Normals &amp; Rates of Change<span class="ch-ref">Think! A-Math Ch 14</span></td><td>Equations of tangents and normals to curves; connected rates of change $\frac{dy}{dt} = \frac{dy}{dx} \cdot \frac{dx}{dt}$ in geometric and physical contexts.</td><td>WA 1</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-calc">Calculus</span></td><td>Stationary Points &amp; Optimization<span class="ch-ref">Think! A-Math Ch 15</span></td><td>Nature of stationary points via first derivative sign test and second derivative test ($\frac{d^2y}{dx^2} \gtrless 0$); practical maxima and minima optimization problems.</td><td>Optimization Assessment</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G3 (4049) — Term 2: Integration, Kinematics &amp; Mid-Year Consolidation</span><span>Weeks 11–20</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Learning Scope &amp; Mathematical Objectives</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-calc">Calculus</span></td><td>Integration &amp; Area Under Curves<span class="ch-ref">Think! A-Math Ch 16–17</span></td><td>Integration as reverse of differentiation; integrating $(ax+b)^n$ ($n \neq -1$), $e^{ax+b}$, $\frac{1}{ax+b}$, $\sin(ax+b)$, $\cos(ax+b)$, $\sec^2(ax+b)$; definite integrals; area bounded by curves, $x$-axis, and $y$-axis.</td><td>WA 2</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-calc">Calculus</span></td><td>Kinematics of Linear Motion<span class="ch-ref">Think! A-Math Ch 18</span></td><td>Relating displacement $s$, velocity $v = \frac{ds}{dt}$, and acceleration $a = \frac{dv}{dt} = \frac{d^2s}{dt^2}$; instantaneous rest ($v = 0$) and total distance travelled over intervals.</td><td>Kinematics Mastery Test</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Revision</span></td><td>Full Syllabus Topical Conditioning<span class="ch-ref">Sec 3 &amp; 4 Syllabus</span></td><td>Structured spiral revision integrating algebra, trigonometry, and calculus multi-part questions.</td><td>Mid-Year Trial Exam</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G3 (4049) — Term 3: Preliminary Examinations &amp; Intensive Clinics</span><span>Weeks 21–30</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Learning Scope &amp; Mathematical Objectives</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-rev">Revision</span></td><td>Timed Paper 1 &amp; Paper 2 Simulations<span class="ch-ref">Past Year &amp; School Papers</span></td><td>Pacing drills (2h 15m per paper, 90 marks each), checking exact vs 3 s.f. / 1 d.p. angle rounding conventions.</td><td>Timed Mock Trials</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-rev">Examination</span></td><td>Preliminary Examination<span class="ch-ref">GCE O-Level 4049 Standard</span></td><td>Full-scale school Preliminary Examination (Paper 1 &amp; Paper 2).</td><td>Preliminary Exam</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Clinic</span></td><td>Post-Prelim Diagnostic Clinics<span class="ch-ref">Targeted Remediation</span></td><td>Error clinics focusing on plane geometry proofs, trigonometric identities, linear law, and kinematics.</td><td>Error Analysis Log</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G3 (4049) — Term 4: National Examination Conditioning</span><span>Weeks 31–40</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Learning Scope &amp; Mathematical Objectives</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-rev">Conditioning</span></td><td>Final Formula Audit &amp; Presentation Polish<span class="ch-ref">SEAB Formula Sheet Review</span></td><td>Verifying given vs memorized identities, rejecting extraneous solutions in log/surd/trig equations.</td><td>Final Consultation</td></tr>
+          <tr><td>W4+</td><td><span class="tag tag-rev">National Exam</span></td><td>GCE O-Level Examination (4049)<span class="ch-ref">Paper 1 &amp; Paper 2</span></td><td>Official SEAB GCE O-Level Additional Mathematics National Examination.</td><td>National Examination</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- SHING LEE — SEC 3 G2 (4051)                                           -->
+  <!-- ===================================================================== -->
+  <div id="p-sl-s3-g2" class="panel">
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G2 (4051) — Term 1: Core Algebra Foundations</span><span>Weeks 1–10</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Learning Scope &amp; Mathematical Objectives (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-alg">Algebra</span></td><td>Quadratic Functions &amp; Inequalities<span class="ch-ref">4051 Algebra Strand</span></td><td>Completing the square $y = a(x-h)^2 + k$ to locate vertex; discriminant $b^2 - 4ac$ for nature of roots and line-curve intersection; solving quadratic inequalities. <em>(Excludes definite quadratic proofs.)</em></td><td>Diagnostic Quiz &amp; WA 1</td></tr>
+          <tr><td>W4–6</td><td><span class="tag tag-alg">Algebra</span></td><td>Polynomials &amp; Partial Fractions<span class="ch-ref">4051 Algebra Strand</span></td><td>Polynomial division, Remainder &amp; Factor Theorems, solving cubic equations; partial fractions with distinct linear factors $\frac{px+q}{(ax+b)(cx+d)}$ and repeated linear factors $\frac{px+q}{(ax+b)^2}$. <em>(Excludes irreducible quadratic denominators.)</em></td><td>Topical Check</td></tr>
+          <tr><td>W7–8</td><td><span class="tag tag-alg">Algebra</span></td><td>Surds &amp; Radical Expressions<span class="ch-ref">4051 Algebra Strand</span></td><td>Simplifying quadratic surds $\sqrt{a^2b} = a\sqrt{b}$ and four operations on surd expressions. <em>(Excludes conjugate denominator rationalisation and radical equations.)</em></td><td>Surds Drill</td></tr>
+          <tr><td>W9–10</td><td><span class="tag tag-alg">Algebra</span></td><td>Binomial Expansions<span class="ch-ref">4051 Algebra Strand</span></td><td>Expanding $(1+b)^n$ and $(a+b)^n$ for positive integer $n$; general term $T_{r+1} = \binom{n}{r} a^{n-r} b^r$ to find specific terms.</td><td>Binomial Quiz</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G2 (4051) — Term 2: Logarithms &amp; Coordinate Geometry</span><span>Weeks 11–20</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Learning Scope &amp; Mathematical Objectives (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-alg">Algebra</span></td><td>Exponential &amp; Logarithmic Functions<span class="ch-ref">4051 Algebra Strand</span></td><td>Base-10 and general base-$a$ ($a > 0, a \neq 1$) indices and logarithms; laws of logarithms, change-of-base, solving exponential and log equations, graphs of $y = a^x$ and $y = \log_a x$. <em>(Excludes $e^x$ and $\ln x$.)</em></td><td>WA 2</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-geo">Geometry</span></td><td>Coordinate Geometry &amp; Linear Law<span class="ch-ref">4051 Geometry Strand</span></td><td>Parallel and perpendicular lines ($m_1 m_2 = -1$), midpoint, area of rectilinear figures; transforming power-law relations ($y = ax^n$, $y = ab^x$) into $Y = mX + c$ using $\lg$.</td><td>Linear Law Task</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-geo">Geometry</span></td><td>Equation of a Circle (Standard Form)<span class="ch-ref">4051 Geometry Strand</span></td><td>Standard circle equation $(x-a)^2 + (y-b)^2 = r^2$; finding centre and radius, and determining equations of circles from geometric conditions. <em>(Excludes general form and circle tangents/normals.)</em></td><td>Circle Geometry Quiz</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G2 (4051) — Term 3: Core Trigonometry</span><span>Weeks 21–30</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Learning Scope &amp; Mathematical Objectives (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–5</td><td><span class="tag tag-trig">Trigonometry</span></td><td>Trigonometric Functions &amp; Graphs<span class="ch-ref">4051 Trig Strand</span></td><td>Six trig ratios for acute angles; $\sin, \cos, \tan$ for general angles in all four quadrants (degrees &amp; radians); exact values for $30^\circ, 45^\circ, 60^\circ$; graphs of $y = a\sin(bx) + c$, $y = a\cos(bx) + c$, $y = a\tan(bx)$.</td><td>WA 3</td></tr>
+          <tr><td>W6–10</td><td><span class="tag tag-trig">Trigonometry</span></td><td>Basic Trig Identities &amp; Equations<span class="ch-ref">4051 Trig Strand</span></td><td>Fundamental identities $\frac{\sin A}{\cos A} = \tan A$ and $\sin^2 A + \cos^2 A = 1$; solving trigonometric equations within given intervals. <em>(Excludes $\sec/\csc/\cot$, compound/double angles, $R$-formula, and Plane Geometry proofs.)</em></td><td>Trig Equations Test</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G2 (4051) — Term 4: Algebraic Differentiation &amp; EOY Review</span><span>Weeks 31–40</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Learning Scope &amp; Mathematical Objectives (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-calc">Calculus</span></td><td>Differentiation of Algebraic Functions<span class="ch-ref">4051 Calculus Strand</span></td><td>Derivative as gradient of tangent; differentiating $x^n$ (rational $n$), sums/differences, and composite functions $(ax+b)^n$ via chain rule, plus product and quotient rules on algebraic expressions.</td><td>Calculus Check</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-rev">Revision</span></td><td>Sec 3 G2 Topical Consolidation<span class="ch-ref">All Sec 3 4051 Topics</span></td><td>Scaffolded revision consolidating quadratics, polynomials, base-$a$ logarithms, coordinate geometry, and basic trig.</td><td>Mock Paper</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Examination</span></td><td>End-of-Year Examinations<span class="ch-ref">G2 4051 Exam Format</span></td><td>Summative Sec 3 G2 Additional Mathematics examination and error review.</td><td>EOY Papers 1 &amp; 2</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- SHING LEE — SEC 4 G2 (4051)                                           -->
+  <!-- ===================================================================== -->
+  <div id="p-sl-s4-g2" class="panel">
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G2 (4051) — Term 1: Applications of Differentiation</span><span>Weeks 1–10</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Learning Scope &amp; Mathematical Objectives (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-calc">Calculus</span></td><td>Tangents, Normals &amp; Increasing/Decreasing<span class="ch-ref">4051 Calculus Strand</span></td><td>Finding gradients and equations of tangents and normals to algebraic curves; identifying intervals where $f'(x) > 0$ or $f'(x) < 0$. <em>(Excludes trig/exp/log differentiation.)</em></td><td>Tangents &amp; Normals Quiz</td></tr>
+          <tr><td>W4–6</td><td><span class="tag tag-calc">Calculus</span></td><td>Connected Rates of Change<span class="ch-ref">4051 Calculus Strand</span></td><td>Applying the chain rule $\frac{dy}{dt} = \frac{dy}{dx} \cdot \frac{dx}{dt}$ to geometric rate problems (area, volume, length).</td><td>WA 1</td></tr>
+          <tr><td>W7–10</td><td><span class="tag tag-calc">Calculus</span></td><td>Stationary Points &amp; Maxima/Minima<span class="ch-ref">4051 Calculus Strand</span></td><td>Finding turning points and points of inflexion; determining nature using the first derivative sign test; solving applied optimization problems. <em>(Excludes second derivative test.)</em></td><td>Optimization Task</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G2 (4051) — Term 2: Algebraic Integration &amp; Kinematics</span><span>Weeks 11–20</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Learning Scope &amp; Mathematical Objectives (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-calc">Calculus</span></td><td>Integration &amp; Area Bounded by x-Axis<span class="ch-ref">4051 Calculus Strand</span></td><td>Integrating $x^n$ ($n \neq -1$) and $(ax+b)^n$ ($n \neq -1$); evaluating definite integrals; finding area of a region bounded by a curve, $x$-axis, and vertical lines $x=a, x=b$. <em>(Excludes $y$-axis area and transcendental integrals.)</em></td><td>WA 2</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-calc">Calculus</span></td><td>Kinematics of Rectilinear Motion<span class="ch-ref">4051 Calculus Strand</span></td><td>Applying differentiation and integration to displacement $s$, velocity $v$, and acceleration $a$ for polynomial/power functions of time $t$.</td><td>Kinematics Quiz</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Revision</span></td><td>Sec 3 &amp; 4 G2 Syllabus Synthesis<span class="ch-ref">Full 4051 Scope</span></td><td>Topical revision reinforcing algebraic fluency, logarithms, trigonometry, and algebraic calculus.</td><td>Mid-Year Trial Exam</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G2 (4051) — Term 3: Preliminary Examinations &amp; Remediation</span><span>Weeks 21–30</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Learning Scope &amp; Mathematical Objectives (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-rev">Revision</span></td><td>Timed G2 Specimen &amp; Mock Papers<span class="ch-ref">4051 Paper 1 &amp; Paper 2</span></td><td>Structured exam pacing (1h 45m per paper, 70 marks each), focusing on method-mark presentation and accuracy.</td><td>Timed Mock Trials</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-rev">Examination</span></td><td>Preliminary Examination (4051)<span class="ch-ref">National Exam Standard</span></td><td>School-wide Preliminary Examination for G2 Additional Mathematics (Paper 1 &amp; Paper 2).</td><td>Preliminary Exam</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Clinic</span></td><td>Post-Prelim Targeted Clinics<span class="ch-ref">Error Remediation</span></td><td>Focused workshops on partial fractions, logarithmic equations, trig quadrant solutions, and area under curves.</td><td>Diagnostic Log</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G2 (4051) — Term 4: G2 National Examination Conditioning</span><span>Weeks 31–40</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Learning Scope &amp; Mathematical Objectives (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-rev">Conditioning</span></td><td>Final Formula Audit &amp; Exam Hygiene<span class="ch-ref">4051 Formula Sheet</span></td><td>Checking calculator radian/degree modes, significant figures, and constant of integration $+c$.</td><td>Final Consultation</td></tr>
+          <tr><td>W4+</td><td><span class="tag tag-rev">National Exam</span></td><td>G2 National Examination (4051)<span class="ch-ref">Paper 1 &amp; Paper 2</span></td><td>Official SEAB GCE N(A)/G2 Additional Mathematics National Examination.</td><td>National Examination</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- STAR PUBLISHING — SEC 3 G3 (4049)                                     -->
+  <!-- ===================================================================== -->
+  <div id="p-sp-s3-g3" class="panel">
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G3 (4049) — Term 1: Algebraic Discovery &amp; Structures</span><span>Weeks 1–10</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Guided Discovery &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-alg">Algebra</span></td><td>Quadratic Functions, Equations &amp; Inequalities<span class="ch-ref">A-Math Insights Ch 1–2</span></td><td>Guided graphing exploration of $y = a(x-h)^2 + k$; discriminant $b^2 - 4ac$ conditions for intersections and definite quadratics; solving quadratic inequalities via sign charts.</td><td>WA 1</td></tr>
+          <tr><td>W4–5</td><td><span class="tag tag-alg">Algebra</span></td><td>Surds &amp; Indices<span class="ch-ref">A-Math Insights Ch 3</span></td><td>Rationalising denominators via conjugate surds $\frac{a + b\sqrt{c}}{d - e\sqrt{c}}$; solving equations involving surds and verifying domain validity.</td><td>Surds Check</td></tr>
+          <tr><td>W6–8</td><td><span class="tag tag-alg">Algebra</span></td><td>Polynomials &amp; Partial Fractions<span class="ch-ref">A-Math Insights Ch 4</span></td><td>Remainder and Factor Theorems; factorising cubic polynomials; decomposing rational functions into partial fractions (distinct linear, repeated linear, and irreducible quadratic factors).</td><td>Polynomial Quiz</td></tr>
+          <tr><td>W9–10</td><td><span class="tag tag-alg">Algebra</span></td><td>The Binomial Theorem<span class="ch-ref">A-Math Insights Ch 5</span></td><td>Discovering Pascal's triangle patterns; expanding $(1+b)^n$ and $(a+b)^n$; using general term $T_{r+1} = \binom{n}{r} a^{n-r} b^r$ in problem solving.</td><td>Binomial Task</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G3 (4049) — Term 2: Logarithmic Models &amp; Coordinate Geometry</span><span>Weeks 11–20</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Guided Discovery &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-alg">Algebra</span></td><td>Exponential &amp; Logarithmic Functions<span class="ch-ref">A-Math Insights Ch 6</span></td><td>Inverse relationship between $y = a^x$ and $y = \log_a x$; Euler's number $e$ and natural log $\ln x$; laws of logarithms, change-of-base, and real-world pH/decibel/population modeling.</td><td>WA 2</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-geo">Geometry</span></td><td>Coordinate Geometry &amp; Circles<span class="ch-ref">A-Math Insights Ch 7</span></td><td>Perpendicular gradients ($m_1 m_2 = -1$), rectilinear polygon area; standard and general circle equations $x^2 + y^2 + 2gx + 2fy + c = 0$, tangents and normals to circles.</td><td>Circle Geometry Lab</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-geo">Geometry</span></td><td>Linear Law<span class="ch-ref">A-Math Insights Ch 8</span></td><td>Linearising experimental data from non-linear curves ($y = ax^n$, $y = kb^x$) into $Y = mX + c$ to estimate empirical constants.</td><td>Data Linearisation Task</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G3 (4049) — Term 3: Trigonometric Modeling &amp; Deductive Proofs</span><span>Weeks 21–30</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Guided Discovery &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-trig">Trigonometry</span></td><td>Trigonometric Functions &amp; Graphs<span class="ch-ref">A-Math Insights Ch 9</span></td><td>Unit circle exploration of general angles; periodic wave graphs $y = a\sin(bx) + c$, $y = a\cos(bx) + c$, $y = a\tan(bx)$ modeling tides and Ferris wheels; principal values.</td><td>WA 3</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-trig">Trigonometry</span></td><td>Trig Identities, Equations &amp; R-Formula<span class="ch-ref">A-Math Insights Ch 10</span></td><td>Reciprocal trig functions, Pythagorean identities, addition and double-angle formulae, proving trigonometric identities, and solving $a\cos\theta + b\sin\theta = c$ using $R\cos(\theta \mp \alpha)$.</td><td>Identities Mastery Test</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-geo">Geometry</span></td><td>Proofs in Plane Geometry<span class="ch-ref">A-Math Insights Ch 11</span></td><td>Structured deductive reasoning with triangle similarity/congruence, Midpoint Theorem, Alternate Segment Theorem, and circle properties.</td><td>Geometry Proof Portfolio</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G3 (4049) — Term 4: Differential Calculus Foundations &amp; EOY</span><span>Weeks 31–40</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Guided Discovery &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-calc">Calculus</span></td><td>Differentiation &amp; Its Techniques<span class="ch-ref">A-Math Insights Ch 12</span></td><td>Secant-to-tangent gradient exploration; power rule, chain rule, product rule, and quotient rule; increasing and decreasing functions.</td><td>Calculus Quiz</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-rev">Revision</span></td><td>Sec 3 Comprehensive Revision<span class="ch-ref">All Sec 3 Insights Units</span></td><td>Bridging algebraic, trigonometric, and calculus problem-solving strategies.</td><td>Mock Examination</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Examination</span></td><td>End-of-Year Examinations<span class="ch-ref">Paper 1 &amp; Paper 2</span></td><td>Summative Sec 3 examination and post-exam diagnostic review.</td><td>EOY Papers 1 &amp; 2</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- STAR PUBLISHING — SEC 4 G3 (4049)                                     -->
+  <!-- ===================================================================== -->
+  <div id="p-sp-s4-g3" class="panel">
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G3 (4049) — Term 1: Transcendental Derivatives &amp; Optimization</span><span>Weeks 1–10</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Guided Discovery &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-calc">Calculus</span></td><td>Derivatives of Trig, Exp &amp; Log Functions<span class="ch-ref">A-Math Insights Ch 13</span></td><td>Differentiation of $\sin(ax+b)$, $\cos(ax+b)$, $\tan(ax+b)$, $e^{ax+b}$, and $\ln(ax+b)$ using chain, product, and quotient rules.</td><td>Derivatives Check</td></tr>
+          <tr><td>W4–7</td><td><span class="tag tag-calc">Calculus</span></td><td>Tangents, Normals &amp; Rates of Change<span class="ch-ref">A-Math Insights Ch 14</span></td><td>Equations of tangents and normals; modeling connected rates of change in expanding containers, shadows, and trajectories.</td><td>WA 1</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-calc">Calculus</span></td><td>Maxima &amp; Minima Problems<span class="ch-ref">A-Math Insights Ch 15</span></td><td>First and second derivative tests ($\frac{d^2y}{dx^2} \gtrless 0$) to classify stationary points; authentic optimization problems in packaging and design.</td><td>Optimization Project</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G3 (4049) — Term 2: Integration, Kinematics &amp; Mid-Year Trials</span><span>Weeks 11–20</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Guided Discovery &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-calc">Calculus</span></td><td>Indefinite &amp; Definite Integration<span class="ch-ref">A-Math Insights Ch 16–17</span></td><td>Antiderivatives of $(ax+b)^n$, $e^{ax+b}$, $\frac{1}{ax+b}$, $\sin(ax+b)$, $\cos(ax+b)$, $\sec^2(ax+b)$; definite integrals; area bounded by curves and $x$- or $y$-axes.</td><td>WA 2</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-calc">Calculus</span></td><td>Kinematics<span class="ch-ref">A-Math Insights Ch 18</span></td><td>Connecting displacement $s$, velocity $v$, and acceleration $a$; interpreting reversals in direction and computing total distance travelled.</td><td>Kinematics Quiz</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Revision</span></td><td>Topical Consolidation &amp; Mid-Year Trials<span class="ch-ref">Full 4049 Syllabus</span></td><td>Integrated multi-concept problem sets across algebra, geometry, trigonometry, and calculus.</td><td>Mid-Year Trial Exam</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G3 (4049) — Term 3: Preliminary Examinations &amp; Clinics</span><span>Weeks 21–30</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Guided Discovery &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-rev">Revision</span></td><td>Timed Paper 1 &amp; Paper 2 Conditioning<span class="ch-ref">Specimen &amp; Past Papers</span></td><td>Full-length timed practice papers emphasizing structured working and exact surd/$\pi$ forms.</td><td>Timed Mock Trials</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-rev">Examination</span></td><td>Preliminary Examination<span class="ch-ref">GCE O-Level 4049</span></td><td>School Preliminary Examination mirroring SEAB 4049 assessment objectives.</td><td>Preliminary Exam</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Clinic</span></td><td>Post-Prelim Error Clinics<span class="ch-ref">Targeted Remediation</span></td><td>Targeted clinics on plane geometry proofs, trigonometric $R$-formula, and area under curves.</td><td>Error Log Review</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G3 (4049) — Term 4: O-Level Final Preparation</span><span>Weeks 31–40</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>Guided Discovery &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-rev">Conditioning</span></td><td>Formula Verification &amp; Exam Readiness<span class="ch-ref">4049 Reference Sheet</span></td><td>Final review of domain restrictions, calculus constants, and presentation accuracy.</td><td>Final Consultation</td></tr>
+          <tr><td>W4+</td><td><span class="tag tag-rev">National Exam</span></td><td>GCE O-Level Examination (4049)<span class="ch-ref">Paper 1 &amp; Paper 2</span></td><td>Official SEAB GCE O-Level Additional Mathematics Examination.</td><td>National Examination</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- STAR PUBLISHING — SEC 3 G2 (4051)                                     -->
+  <!-- ===================================================================== -->
+  <div id="p-sp-s3-g2" class="panel">
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G2 (4051) — Term 1: Algebraic Exploration</span><span>Weeks 1–10</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Guided Discovery &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-alg">Algebra</span></td><td>Quadratic Functions &amp; Inequalities<span class="ch-ref">4051 Algebra Strand</span></td><td>Exploring parabolic shifts via $y = a(x-h)^2 + k$; discriminant $b^2 - 4ac$ for roots and line-curve intersection; solving quadratic inequalities.</td><td>WA 1</td></tr>
+          <tr><td>W4–5</td><td><span class="tag tag-alg">Algebra</span></td><td>Surds<span class="ch-ref">4051 Algebra Strand</span></td><td>Simplifying quadratic surds and performing addition, subtraction, and multiplication of surd expressions. <em>(Excludes conjugate rationalisation &amp; surd equations.)</em></td><td>Surds Check</td></tr>
+          <tr><td>W6–8</td><td><span class="tag tag-alg">Algebra</span></td><td>Polynomials &amp; Partial Fractions<span class="ch-ref">4051 Algebra Strand</span></td><td>Remainder and Factor Theorems, solving cubic equations; partial fractions with distinct and repeated linear denominators.</td><td>Polynomial Quiz</td></tr>
+          <tr><td>W9–10</td><td><span class="tag tag-alg">Algebra</span></td><td>Binomial Theorem<span class="ch-ref">4051 Algebra Strand</span></td><td>Expanding $(1+b)^n$ and $(a+b)^n$ for positive integer $n$; finding specific terms using $T_{r+1} = \binom{n}{r} a^{n-r} b^r$.</td><td>Binomial Task</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G2 (4051) — Term 2: Base-a Logarithms &amp; Coordinate Geometry</span><span>Weeks 11–20</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Guided Discovery &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-alg">Algebra</span></td><td>Exponential &amp; Logarithmic Functions<span class="ch-ref">4051 Algebra Strand</span></td><td>Base-10 ($\lg$) and general base-$a$ ($a > 0, a \neq 1$) indices and logarithms; laws of logarithms, change-of-base, solving equations, graphs of $y = a^x$ and $y = \log_a x$.</td><td>WA 2</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-geo">Geometry</span></td><td>Coordinate Geometry &amp; Circles<span class="ch-ref">4051 Geometry Strand</span></td><td>Parallel and perpendicular lines ($m_1 m_2 = -1$), area of rectilinear figures; standard circle equation $(x-a)^2 + (y-b)^2 = r^2$ (centre and radius).</td><td>Circle Geometry Lab</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-geo">Geometry</span></td><td>Linear Law<span class="ch-ref">4051 Geometry Strand</span></td><td>Transforming power-law relationships ($y = ax^n$, $y = ab^x$) into linear graphs $Y = mX + c$ using base-10 logarithms.</td><td>Linear Law Task</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G2 (4051) — Term 3: Core Trigonometry</span><span>Weeks 21–30</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Guided Discovery &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–5</td><td><span class="tag tag-trig">Trigonometry</span></td><td>Trigonometric Functions &amp; Graphs<span class="ch-ref">4051 Trig Strand</span></td><td>Six trig ratios for acute angles; $\sin, \cos, \tan$ for general angles in degrees and radians; exact values for $30^\circ, 45^\circ, 60^\circ$; sketching $y = a\sin(bx) + c$, $y = a\cos(bx) + c$, $y = a\tan(bx)$.</td><td>WA 3</td></tr>
+          <tr><td>W6–10</td><td><span class="tag tag-trig">Trigonometry</span></td><td>Trig Identities &amp; Equations<span class="ch-ref">4051 Trig Strand</span></td><td>Using $\frac{\sin A}{\cos A} = \tan A$ and $\sin^2 A + \cos^2 A = 1$ to simplify expressions and solve trigonometric equations in degrees and radians.</td><td>Trig Equations Test</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G2 (4051) — Term 4: Algebraic Differentiation &amp; EOY</span><span>Weeks 31–40</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Guided Discovery &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-calc">Calculus</span></td><td>Differentiation of Algebraic Functions<span class="ch-ref">4051 Calculus Strand</span></td><td>Derivative as gradient function; power rule, chain rule on $(ax+b)^n$, product and quotient rules on algebraic functions.</td><td>Calculus Quiz</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-rev">Revision</span></td><td>Sec 3 G2 Topical Consolidation<span class="ch-ref">All Sec 3 4051 Topics</span></td><td>Guided synthesis across quadratics, polynomials, logarithms, coordinate geometry, and basic trig.</td><td>Mock Paper</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Examination</span></td><td>End-of-Year Examinations<span class="ch-ref">G2 4051 Format</span></td><td>Summative Sec 3 G2 examination and post-exam review.</td><td>EOY Papers 1 &amp; 2</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- STAR PUBLISHING — SEC 4 G2 (4051)                                     -->
+  <!-- ===================================================================== -->
+  <div id="p-sp-s4-g2" class="panel">
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G2 (4051) — Term 1: Applications of Differentiation</span><span>Weeks 1–10</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Guided Discovery &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-calc">Calculus</span></td><td>Tangents, Normals &amp; Curve Behaviour<span class="ch-ref">4051 Calculus Strand</span></td><td>Equations of tangents and normals to algebraic curves; increasing and decreasing functions using $f'(x) \gtrless 0$.</td><td>Tangents Quiz</td></tr>
+          <tr><td>W4–6</td><td><span class="tag tag-calc">Calculus</span></td><td>Connected Rates of Change<span class="ch-ref">4051 Calculus Strand</span></td><td>Applying $\frac{dy}{dt} = \frac{dy}{dx} \cdot \frac{dx}{dt}$ to practical geometric rate problems.</td><td>WA 1</td></tr>
+          <tr><td>W7–10</td><td><span class="tag tag-calc">Calculus</span></td><td>Stationary Points &amp; Maxima/Minima<span class="ch-ref">4051 Calculus Strand</span></td><td>Locating stationary points and testing nature via first derivative sign test; solving optimization problems in context.</td><td>Optimization Task</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G2 (4051) — Term 2: Integration &amp; Kinematics</span><span>Weeks 11–20</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Guided Discovery &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-calc">Calculus</span></td><td>Integration &amp; Area Under Curves<span class="ch-ref">4051 Calculus Strand</span></td><td>Indefinite and definite integrals of $x^n$ and $(ax+b)^n$ ($n \neq -1$); area bounded by a curve, $x$-axis, and vertical lines.</td><td>WA 2</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-calc">Calculus</span></td><td>Kinematics of Rectilinear Motion<span class="ch-ref">4051 Calculus Strand</span></td><td>Relating displacement, velocity, and acceleration for algebraic functions of time $t$.</td><td>Kinematics Quiz</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Revision</span></td><td>Full 4051 Topical Consolidation<span class="ch-ref">Sec 3 &amp; 4 Syllabus</span></td><td>Structured revision linking algebra, trigonometry, and calculus skills.</td><td>Mid-Year Trial Exam</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G2 (4051) — Term 3: Preliminary Examinations &amp; Clinics</span><span>Weeks 21–30</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Guided Discovery &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-rev">Revision</span></td><td>Timed Paper 1 &amp; Paper 2 Simulations<span class="ch-ref">4051 Specimen Series</span></td><td>Timed practice (1h 45m per paper) building pacing and step-by-step accuracy.</td><td>Timed Mock Trials</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-rev">Examination</span></td><td>Preliminary Examination (4051)<span class="ch-ref">National Exam Standard</span></td><td>School Preliminary Examination for G2 Additional Mathematics.</td><td>Preliminary Exam</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Clinic</span></td><td>Post-Prelim Error Remediation<span class="ch-ref">Targeted Clinics</span></td><td>Targeted review of common pitfalls in logarithms, trig equations, and definite integrals.</td><td>Error Log Check</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G2 (4051) — Term 4: G2 National Examination Conditioning</span><span>Weeks 31–40</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>Guided Discovery &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-rev">Conditioning</span></td><td>Final Formula Check &amp; Exam Hygiene<span class="ch-ref">4051 Formula Sheet</span></td><td>Final verification of radian/degree calculator modes, rounding rules, and presentation clarity.</td><td>Final Consultation</td></tr>
+          <tr><td>W4+</td><td><span class="tag tag-rev">National Exam</span></td><td>G2 National Examination (4051)<span class="ch-ref">Paper 1 &amp; Paper 2</span></td><td>Official SEAB GCE N(A)/G2 Additional Mathematics Examination.</td><td>National Examination</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MARSHALL CAVENDISH — SEC 3 G3 (4049)                                  -->
+  <!-- ===================================================================== -->
+  <div id="p-mc-s3-g3" class="panel">
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G3 (4049) — Term 1: CPA Algebraic Structures</span><span>Weeks 1–10</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>CPA Progression &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-alg">Algebra</span></td><td>Quadratics &amp; Inequalities<span class="ch-ref">A-Math 360 Ch 1</span></td><td>Visual parabolic vertex modeling $y = a(x-h)^2 + k$; discriminant $b^2 - 4ac$ conditions, line-curve intersections, quadratic inequalities, and definite quadratics ($a \gtrless 0, D < 0$).</td><td>WA 1</td></tr>
+          <tr><td>W4–6</td><td><span class="tag tag-alg">Algebra</span></td><td>Polynomials &amp; Partial Fractions<span class="ch-ref">A-Math 360 Ch 2</span></td><td>Area/grid polynomial division, Factor &amp; Remainder Theorems, cubic factorisation, and partial fractions decomposition (linear, repeated linear, irreducible quadratic).</td><td>Topical Check</td></tr>
+          <tr><td>W7–8</td><td><span class="tag tag-alg">Algebra</span></td><td>Surds &amp; Radical Equations<span class="ch-ref">A-Math 360 Ch 3</span></td><td>Geometric area models for surd products; conjugate surd rationalisation $\frac{c}{a \pm \sqrt{b}}$; solving radical equations with extraneous root checks.</td><td>Surd Check</td></tr>
+          <tr><td>W9–10</td><td><span class="tag tag-alg">Algebra</span></td><td>Binomial Theorem<span class="ch-ref">A-Math 360 Ch 4</span></td><td>Combinatorial tree/grid visualization of $\binom{n}{r}$; general term $T_{r+1} = \binom{n}{r} a^{n-r} b^r$ and algebraic expansions of $(1+b)^n$ and $(a+b)^n$.</td><td>Binomial Quiz</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G3 (4049) — Term 2: Logarithmic Functions &amp; Coordinate Geometry</span><span>Weeks 11–20</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>CPA Progression &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-alg">Algebra</span></td><td>Exponential &amp; Logarithmic Functions<span class="ch-ref">A-Math 360 Ch 5</span></td><td>Reflection symmetry between $y = a^x$ and $y = \log_a x$; laws of logarithms, change-of-base, natural exponential $e^x$ and $\ln x$, and exponential growth/decay models.</td><td>WA 2</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-geo">Geometry</span></td><td>Linear Law<span class="ch-ref">A-Math 360 Ch 6</span></td><td>Graphically transforming non-linear curves into straight-line models $Y = mX + c$ to determine unknown constants.</td><td>Linear Law Activity</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-geo">Geometry</span></td><td>Coordinate Geometry of Circles<span class="ch-ref">A-Math 360 Ch 7</span></td><td>Locus visualization of $(x-a)^2 + (y-b)^2 = r^2$ and general form $x^2 + y^2 + 2gx + 2fy + c = 0$; tangent and normal lines to circles.</td><td>Circles Assessment</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G3 (4049) — Term 3: Trigonometry &amp; Plane Geometry Proofs</span><span>Weeks 21–30</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>CPA Progression &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-trig">Trigonometry</span></td><td>Trig Functions, Graphs &amp; Equations<span class="ch-ref">A-Math 360 Ch 8</span></td><td>Unit-circle projection of angles in all four quadrants; sketching sine, cosine, and tangent waves; solving trigonometric equations.</td><td>WA 3</td></tr>
+          <tr><td>W4–7</td><td><span class="tag tag-trig">Trigonometry</span></td><td>Trig Identities &amp; Formulae<span class="ch-ref">A-Math 360 Ch 9</span></td><td>Reciprocal trig functions, Pythagorean identities, compound angle and double angle formulae, and $R$-formula $R\cos(\theta \mp \alpha)$.</td><td>Identities Quiz</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-geo">Geometry</span></td><td>Proofs in Plane Geometry<span class="ch-ref">A-Math 360 Ch 10</span></td><td>Visual diagram decomposition for deductive geometric proofs using Midpoint Theorem, Alternate Segment Theorem, and circle theorems.</td><td>Proofs Assignment</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G3 (4049) — Term 4: Differentiation Rules &amp; EOY</span><span>Weeks 31–40</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>CPA Progression &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-calc">Calculus</span></td><td>Differentiation Rules<span class="ch-ref">A-Math 360 Ch 11</span></td><td>Dynamic tangent-slope zoom concept of derivative; power rule, chain rule, product rule, and quotient rule.</td><td>Calculus Lab</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-rev">Revision</span></td><td>Sec 3 Unified A-Math Revision<span class="ch-ref">All Sec 3 360 Chapters</span></td><td>Consolidated practice papers linking algebra, trigonometry, coordinate geometry, and differentiation.</td><td>Mock Exam</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Examination</span></td><td>Sec 3 End-of-Year Examinations<span class="ch-ref">Paper 1 &amp; Paper 2 Format</span></td><td>Summative examination under formal O-Level conditions.</td><td>EOY Papers</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MARSHALL CAVENDISH — SEC 4 G3 (4049)                                  -->
+  <!-- ===================================================================== -->
+  <div id="p-mc-s4-g3" class="panel">
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G3 (4049) — Term 1: Transcendental Calculus &amp; Optimization</span><span>Weeks 1–10</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>CPA Progression &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-calc">Calculus</span></td><td>Transcendental Functions<span class="ch-ref">A-Math 360 Ch 12</span></td><td>Derivatives of trigonometric ($\sin, \cos, \tan$), exponential ($e^x$), and logarithmic ($\ln x$) functions.</td><td>Mastery Test</td></tr>
+          <tr><td>W4–7</td><td><span class="tag tag-calc">Calculus</span></td><td>Tangents, Normals &amp; Rates<span class="ch-ref">A-Math 360 Ch 13</span></td><td>Finding tangent and normal equations; visual rate-chain diagrams for connected rates of change models.</td><td>WA 1</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-calc">Calculus</span></td><td>Maxima &amp; Minima Optimization<span class="ch-ref">A-Math 360 Ch 14</span></td><td>First and second derivative tests ($\frac{d^2y}{dx^2} \gtrless 0$) and practical geometric optimization problems.</td><td>Optimization Test</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G3 (4049) — Term 2: Integration, Kinematics &amp; Trials</span><span>Weeks 11–20</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>CPA Progression &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-calc">Calculus</span></td><td>Integration &amp; Area Under Curve<span class="ch-ref">A-Math 360 Ch 15–16</span></td><td>Riemann strip area intuition; indefinite and definite integrals; areas bounded by curves and $x$- or $y$-axes.</td><td>WA 2</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-calc">Calculus</span></td><td>Kinematics of Linear Motion<span class="ch-ref">A-Math 360 Ch 17</span></td><td>Motion-line diagrams for displacement, velocity, and acceleration; interpreting signs and total distance travelled.</td><td>Kinematics Check</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Revision</span></td><td>A-Math Consolidation &amp; Trials<span class="ch-ref">Full 4049 Syllabus</span></td><td>Cross-topical problem solving linking calculus, algebra, and trigonometry.</td><td>Trial Exams</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G3 (4049) — Term 3: Preliminary Examinations &amp; Clinics</span><span>Weeks 21–30</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>CPA Progression &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-rev">Revision</span></td><td>Timed Paper 1 &amp; Paper 2 Revision<span class="ch-ref">Past Year Series</span></td><td>Practicing multi-concept questions under strict 2h 15m exam constraints.</td><td>Timed Practice</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-rev">Examination</span></td><td>Preliminary Examination (Paper 1 &amp; 2)<span class="ch-ref">GCE O-Level 4049</span></td><td>School-wide preliminary assessment matching national exam standards.</td><td>Preliminary Exam</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Clinic</span></td><td>Post-Prelim Error Analysis<span class="ch-ref">Targeted Remediation</span></td><td>Targeted remediation on high-weighting topics and proof structure.</td><td>Error Check</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G3 (4049) — Term 4: GCE O-Level Examination</span><span>Weeks 31–40</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Textbook Ref</th><th>CPA Progression &amp; Learning Scope</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-rev">Conditioning</span></td><td>Final Revision &amp; Presentation Accuracy<span class="ch-ref">4049 Formula Sheet</span></td><td>Notation precision, method-mark validation, and formula checks.</td><td>Final Consultation</td></tr>
+          <tr><td>W4+</td><td><span class="tag tag-rev">National Exam</span></td><td>GCE O-Level 4049 Examination<span class="ch-ref">Paper 1 &amp; Paper 2</span></td><td>Official SEAB GCE O-Level National Examination.</td><td>National Exam</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MARSHALL CAVENDISH — SEC 3 G2 (4051)                                  -->
+  <!-- ===================================================================== -->
+  <div id="p-mc-s3-g2" class="panel">
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G2 (4051) — Term 1: CPA Core Algebra</span><span>Weeks 1–10</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>CPA Progression &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-alg">Algebra</span></td><td>Quadratics &amp; Inequalities<span class="ch-ref">4051 Algebra Strand</span></td><td>Parabolic vertex modeling $y = a(x-h)^2 + k$; discriminant $b^2 - 4ac$ for roots and line-curve intersection; solving quadratic inequalities.</td><td>WA 1</td></tr>
+          <tr><td>W4–6</td><td><span class="tag tag-alg">Algebra</span></td><td>Polynomials &amp; Partial Fractions<span class="ch-ref">4051 Algebra Strand</span></td><td>Grid division, Factor &amp; Remainder Theorems, cubic factorisation; partial fractions with distinct linear and repeated linear denominators.</td><td>Topical Check</td></tr>
+          <tr><td>W7–8</td><td><span class="tag tag-alg">Algebra</span></td><td>Surds<span class="ch-ref">4051 Algebra Strand</span></td><td>Simplifying quadratic surds and four operations on surd expressions. <em>(Excludes conjugate rationalisation and radical equations.)</em></td><td>Surds Quiz</td></tr>
+          <tr><td>W9–10</td><td><span class="tag tag-alg">Algebra</span></td><td>Binomial Theorem<span class="ch-ref">4051 Algebra Strand</span></td><td>Expanding $(1+b)^n$ and $(a+b)^n$ for positive integer $n$; finding specific terms via $T_{r+1} = \binom{n}{r} a^{n-r} b^r$.</td><td>Binomial Check</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G2 (4051) — Term 2: Base-a Logarithms &amp; Coordinate Geometry</span><span>Weeks 11–20</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>CPA Progression &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-alg">Algebra</span></td><td>Exponential &amp; Logarithmic Functions<span class="ch-ref">4051 Algebra Strand</span></td><td>Visual reflection of $y = a^x$ and $y = \log_a x$ ($a > 0, a \neq 1$); laws of logarithms, change-of-base, solving log/exponential equations.</td><td>WA 2</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-geo">Geometry</span></td><td>Linear Law<span class="ch-ref">4051 Geometry Strand</span></td><td>Transforming power-law relationships ($y = ax^n$, $y = ab^x$) into linear form $Y = mX + c$ using base-10 logarithms.</td><td>Linear Law Activity</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-geo">Geometry</span></td><td>Coordinate Geometry of Circles<span class="ch-ref">4051 Geometry Strand</span></td><td>Standard circle form $(x-a)^2 + (y-b)^2 = r^2$; finding centre and radius from geometric conditions.</td><td>Circle Check</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G2 (4051) — Term 3: Core Trigonometry</span><span>Weeks 21–30</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>CPA Progression &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–5</td><td><span class="tag tag-trig">Trigonometry</span></td><td>Trig Functions &amp; Graphs<span class="ch-ref">4051 Trig Strand</span></td><td>Unit-circle projection for general angles (degrees &amp; radians); sketching $y = a\sin(bx) + c$, $y = a\cos(bx) + c$, $y = a\tan(bx)$.</td><td>WA 3</td></tr>
+          <tr><td>W6–10</td><td><span class="tag tag-trig">Trigonometry</span></td><td>Basic Trig Identities &amp; Equations<span class="ch-ref">4051 Trig Strand</span></td><td>Applying $\frac{\sin A}{\cos A} = \tan A$ and $\sin^2 A + \cos^2 A = 1$ to solve trigonometric equations in specified intervals.</td><td>Trig Equations Test</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 3 G2 (4051) — Term 4: Algebraic Differentiation &amp; EOY</span><span>Weeks 31–40</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>CPA Progression &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-calc">Calculus</span></td><td>Differentiation Rules (Algebraic)<span class="ch-ref">4051 Calculus Strand</span></td><td>Tangent gradient intuition; power rule, chain rule on $(ax+b)^n$, product and quotient rules for algebraic functions.</td><td>Calculus Lab</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-rev">Revision</span></td><td>Sec 3 G2 Consolidated Revision<span class="ch-ref">All Sec 3 4051 Topics</span></td><td>Scaffolded revision integrating algebra, logarithms, coordinate geometry, and basic trigonometry.</td><td>Mock Exam</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Examination</span></td><td>Sec 3 G2 End-of-Year Examinations<span class="ch-ref">G2 4051 Format</span></td><td>Summative Sec 3 G2 examination and post-exam review.</td><td>EOY Papers</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MARSHALL CAVENDISH — SEC 4 G2 (4051)                                  -->
+  <!-- ===================================================================== -->
+  <div id="p-mc-s4-g2" class="panel">
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G2 (4051) — Term 1: Applications of Differentiation</span><span>Weeks 1–10</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>CPA Progression &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-calc">Calculus</span></td><td>Tangents, Normals &amp; Curve Behaviour<span class="ch-ref">4051 Calculus Strand</span></td><td>Tangent and normal equations to algebraic curves; increasing and decreasing intervals ($f'(x) \gtrless 0$).</td><td>Tangents Check</td></tr>
+          <tr><td>W4–6</td><td><span class="tag tag-calc">Calculus</span></td><td>Connected Rates of Change<span class="ch-ref">4051 Calculus Strand</span></td><td>Visual rate-chain diagrams for $\frac{dy}{dt} = \frac{dy}{dx} \cdot \frac{dx}{dt}$ in geometric rate problems.</td><td>WA 1</td></tr>
+          <tr><td>W7–10</td><td><span class="tag tag-calc">Calculus</span></td><td>Maxima &amp; Minima Optimization<span class="ch-ref">4051 Calculus Strand</span></td><td>Classifying stationary points via first derivative sign test; solving practical optimization models.</td><td>Optimization Test</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G2 (4051) — Term 2: Integration, Kinematics &amp; Trials</span><span>Weeks 11–20</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>CPA Progression &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-calc">Calculus</span></td><td>Integration &amp; Area Under Curve<span class="ch-ref">4051 Calculus Strand</span></td><td>Riemann strip intuition; indefinite and definite integrals of $x^n$ and $(ax+b)^n$ ($n \neq -1$); area bounded by curves and $x$-axis.</td><td>WA 2</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-calc">Calculus</span></td><td>Kinematics of Linear Motion<span class="ch-ref">4051 Calculus Strand</span></td><td>Motion-line diagrams for displacement, velocity, and acceleration of algebraic functions of time $t$.</td><td>Kinematics Check</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Revision</span></td><td>G2 A-Math Consolidation &amp; Trials<span class="ch-ref">Full 4051 Syllabus</span></td><td>Cross-topical problem solving linking algebraic calculus, logarithms, and trigonometry.</td><td>Trial Exams</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G2 (4051) — Term 3: Preliminary Examinations &amp; Clinics</span><span>Weeks 21–30</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>CPA Progression &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–4</td><td><span class="tag tag-rev">Revision</span></td><td>Timed Paper 1 &amp; Paper 2 Revision<span class="ch-ref">4051 Specimen Series</span></td><td>Timed practice under 1h 45m exam constraints focusing on accuracy and method marks.</td><td>Timed Practice</td></tr>
+          <tr><td>W5–7</td><td><span class="tag tag-rev">Examination</span></td><td>Preliminary Examination (4051)<span class="ch-ref">National Exam Standard</span></td><td>School-wide preliminary assessment matching SEAB 4051 standards.</td><td>Preliminary Exam</td></tr>
+          <tr><td>W8–10</td><td><span class="tag tag-rev">Clinic</span></td><td>Post-Prelim Error Analysis<span class="ch-ref">Targeted Remediation</span></td><td>Targeted remediation on partial fractions, logarithms, trig quadrants, and area under curves.</td><td>Error Check</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="term-title"><span>Sec 4 G2 (4051) — Term 4: G2 National Examination</span><span>Weeks 31–40</span></div>
+      <table>
+        <thead><tr><th style="width:9%;">Weeks</th><th style="width:13%;">Strand</th><th style="width:24%;">Topic &amp; Syllabus Scope</th><th>CPA Progression &amp; Learning Scope (4051 Adjusted)</th><th style="width:16%;">Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>W1–3</td><td><span class="tag tag-rev">Conditioning</span></td><td>Final Revision &amp; Presentation Accuracy<span class="ch-ref">4051 Formula Sheet</span></td><td>Notation precision, calculator mode verification, and formula checks.</td><td>Final Consultation</td></tr>
+          <tr><td>W4+</td><td><span class="tag tag-rev">National Exam</span></td><td>G2 National Examination (4051)<span class="ch-ref">Paper 1 &amp; Paper 2</span></td><td>Official SEAB GCE N(A)/G2 National Examination.</td><td>National Exam</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- CURRICULUM COMPARISON MATRIX: G2 (4051) VS G3 (4049)                  -->
+  <!-- ===================================================================== -->
+  <div id="p-cmp" class="panel">
+    <div class="card">
+      <div class="term-title"><span>Syllabus Structure &amp; Examination Scheme Comparison</span><span>SEAB 4051 vs 4049</span></div>
+      <table>
+        <thead><tr><th style="width:20%;">Dimension</th><th style="width:40%;">G2 Additional Mathematics (Syllabus 4051)</th><th style="width:40%;">G3 Additional Mathematics (Syllabus 4049)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Examination Format</strong></td><td><strong>2 Papers</strong> (1 hr 45 min each, 70 marks each; 140 marks total, 50% weighting each).</td><td><strong>2 Papers</strong> (2 hr 15 min each, 90 marks each; 180 marks total, 50% weighting each).</td></tr>
+          <tr><td><strong>Publisher Series</strong></td><td>Adapted from <em>Think! Additional Mathematics</em> (Shing Lee), <em>Additional Mathematics Insights</em> (Star Publishing), and <em>Additional Mathematics 360</em> (Marshall Cavendish).</td><td>Full coverage in <em>Think! Additional Mathematics</em> (Shing Lee), <em>Additional Mathematics Insights</em> (Star Publishing), and <em>Additional Mathematics 360</em> (Marshall Cavendish).</td></tr>
+          <tr><td><strong>Core Strands</strong></td><td>1. Algebra &nbsp;|&nbsp; 2. Geometry &amp; Trigonometry &nbsp;|&nbsp; 3. Calculus</td><td>1. Algebra &nbsp;|&nbsp; 2. Geometry &amp; Trigonometry &nbsp;|&nbsp; 3. Calculus</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="term-title"><span>Topic-by-Topic Scope &amp; Depth Matrix (G2 4051 vs G3 4049)</span><span>Detailed Boundary Audit</span></div>
+      <table>
+        <thead><tr><th style="width:14%;">Strand</th><th style="width:22%;">Topic</th><th style="width:32%;">G2 Additional Mathematics (4051)</th><th style="width:32%;">G3 Additional Mathematics (4049)</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="tag tag-alg">Algebra</span></td>
+            <td><strong>Quadratic Functions</strong></td>
+            <td>Completing the square, discriminant $b^2-4ac$ for roots &amp; line-curve intersections, quadratic inequalities. <span class="tag tag-excl">Excludes definite quadratics</span></td>
+            <td>Includes all G2 scope plus conditions for $ax^2+bx+c$ to be always positive ($a>0, D<0$) or always negative ($a<0, D<0$). <span class="tag tag-incl">Full Scope</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-alg">Algebra</span></td>
+            <td><strong>Polynomials &amp; Partial Fractions</strong></td>
+            <td>Remainder &amp; Factor Theorems, cubic equations; partial fractions with distinct linear and repeated linear denominators only.</td>
+            <td>Includes all G2 scope plus partial fractions with irreducible quadratic denominators $\frac{px+q}{(ax+b)(x^2+c^2)}$. <span class="tag tag-g3only">G3 Extension</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-alg">Algebra</span></td>
+            <td><strong>Surds</strong></td>
+            <td>Four operations on quadratic surds and simplifying $\sqrt{a^2b}$. <span class="tag tag-excl">Excludes conjugate rationalisation &amp; equations</span></td>
+            <td>Includes rationalising denominators via conjugate surds $\frac{c}{a \pm \sqrt{b}}$ and solving radical equations. <span class="tag tag-g3only">G3 Extension</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-alg">Algebra</span></td>
+            <td><strong>Exponential &amp; Logarithmic Functions</strong></td>
+            <td>Base-10 and general base-$a$ ($a>0, a\neq 1$) indices &amp; logarithms, laws of logs, change-of-base, graphs. <span class="tag tag-excl">Excludes $e^x$ &amp; $\ln x$</span></td>
+            <td>Includes natural exponential function $e^x$, natural logarithm $\ln x$, and base-$e$ modeling. <span class="tag tag-g3only">G3 Extension</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-geo">Geometry</span></td>
+            <td><strong>Coordinate Geometry &amp; Circles</strong></td>
+            <td>Parallel/perpendicular lines ($m_1m_2=-1$), rectilinear area, Linear Law (power models), and standard circle $(x-a)^2+(y-b)^2=r^2$.</td>
+            <td>Includes general circle form $x^2+y^2+2gx+2fy+c=0$, tangents &amp; normals to circles, and base-$e$ Linear Law. <span class="tag tag-g3only">G3 Extension</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-trig">Trigonometry</span></td>
+            <td><strong>Trig Functions, Identities &amp; Equations</strong></td>
+            <td>Six trig ratios (acute), $\sin/\cos/\tan$ general angles &amp; graphs, $\frac{\sin A}{\cos A}=\tan A$, $\sin^2 A+\cos^2 A=1$, basic equations.</td>
+            <td>Includes reciprocal identities ($\sec, \csc, \cot$), addition &amp; double-angle formulae, $R$-formula $R\cos(\theta \mp \alpha)$, and identity proofs. <span class="tag tag-g3only">G3 Extension</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-geo">Geometry</span></td>
+            <td><strong>Proofs in Plane Geometry</strong></td>
+            <td><span class="tag tag-excl">Omitted from G2 (4051)</span></td>
+            <td>Deductive geometric proofs using triangle congruence/similarity, Midpoint Theorem, and Alternate Segment Theorem. <span class="tag tag-g3only">G3 Exclusive</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-calc">Calculus</span></td>
+            <td><strong>Differentiation &amp; Applications</strong></td>
+            <td>Algebraic functions $x^n$ &amp; $(ax+b)^n$, product/quotient/chain rules, tangents/normals, rates of change, first derivative test for stationary points.</td>
+            <td>Includes derivatives of $\sin, \cos, \tan, e^x, \ln x$ and second derivative test ($\frac{d^2y}{dx^2} \gtrless 0$) for maxima/minima. <span class="tag tag-g3only">G3 Extension</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-calc">Calculus</span></td>
+            <td><strong>Integration &amp; Kinematics</strong></td>
+            <td>Indefinite &amp; definite integrals of $x^n$ &amp; $(ax+b)^n$ ($n \neq -1$), area bounded by curve &amp; $x$-axis, rectilinear kinematics (algebraic).</td>
+            <td>Includes integrals of $e^{ax+b}, \frac{1}{ax+b}, \sin, \cos, \sec^2$, area bounded by $y$-axis, and transcendental kinematics. <span class="tag tag-g3only">G3 Extension</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation & MathJax Re-Typesetting Script -->
+<script>
+  let curPub = 'sl';
+  let curLvl = 's3';
+  let curGrd = 'g3';
+
+  const pubMeta = {
+    sl: {
+      theme: 'theme-sl',
+      banner: '<strong>Shing Lee Publishers (Think! Additional Mathematics / NSAM):</strong> Investigative inquiry, spiral progression, structured anchor tasks, and rigorous procedural drill sets.'
+    },
+    sp: {
+      theme: 'theme-sp',
+      banner: '<strong>Star Publishing (Additional Mathematics Insights):</strong> Guided exploration, active discovery, visual graphing connections, and authentic real-world modeling.'
+    },
+    mc: {
+      theme: 'theme-mc',
+      banner: '<strong>Marshall Cavendish Education (Additional Mathematics 360):</strong> Concrete-Pictorial-Abstract (CPA) progression, visual locus/graph intuition, and scaffolded mastery.'
+    },
+    cmp: {
+      theme: 'theme-cmp',
+      banner: '<strong>Curriculum Boundary Audit (SEAB 4051 vs 4049):</strong> Side-by-side comparison of G2 (4051) and G3 (4049) Additional Mathematics examination schemes, topic inclusions, and G3-exclusive extensions.'
+    }
+  };
+
+  function pickPub(pub) {
+    curPub = pub;
+    updateNav();
+  }
+
+  function pickLevel(lvl) {
+    curLvl = lvl;
+    updateNav();
+  }
+
+  function pickGrade(grd) {
+    curGrd = grd;
+    updateNav();
+  }
+
+  function updateNav() {
+    document.body.className = pubMeta[curPub].theme;
+    document.getElementById('pedagogy-banner').innerHTML = `
+      <div>${pubMeta[curPub].banner}</div>
+      <div style="color:var(--muted); font-size:0.78rem;">Print / Save PDF: <code>Ctrl+P</code> / <code>Cmd+P</code></div>
+    `;
+
+    const rowLevel = document.getElementById('row-level');
+    const rowGrade = document.getElementById('row-grade');
+    const badge = document.getElementById('syllabus-badge');
+
+    if (curPub === 'cmp') {
+      rowLevel.style.display = 'none';
+      rowGrade.style.display = 'none';
+      badge.textContent = '4051 vs 4049 Comparison';
+    } else {
+      rowLevel.style.display = 'flex';
+      rowGrade.style.display = 'flex';
+      badge.textContent = curGrd === 'g3' ? 'Syllabus G3 (4049)' : 'Syllabus G2 (4051)';
+    }
+
+    document.querySelectorAll('[data-pub]').forEach(b => b.classList.toggle('active', b.dataset.pub === curPub));
+    document.querySelectorAll('[data-lvl]').forEach(b => b.classList.toggle('active', b.dataset.lvl === curLvl));
+    document.querySelectorAll('[data-grd]').forEach(b => b.classList.toggle('active', b.dataset.grd === curGrd));
+
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    const targetId = curPub === 'cmp' ? 'p-cmp' : `p-${curPub}-${curLvl}-${curGrd}`;
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.classList.add('active');
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([target]);
+      }
+    }
+  }
+</script>
+</body>
+</html>
